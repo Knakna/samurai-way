@@ -4,13 +4,14 @@ import {Post} from './post/Post';
 
 
 export function MyPosts() {
+
     return (
         <div className={s.myPosts}>
             My posts
             <div>New post</div>
             <div>
-                <Post/>
-                <Post/>
+                <Post message='Hi' likesCount={0}/>
+                <Post message='Post' likesCount={12}/>
             </div>
         </div>
     );
