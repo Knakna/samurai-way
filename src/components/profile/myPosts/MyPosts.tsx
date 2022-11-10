@@ -8,8 +8,12 @@ export function MyPosts() {
     return (
         <div className={s.myPosts}>
             My posts
-            <div>New post</div>
             <div>
+                <textarea></textarea>
+                <button>Add post</button>
+            </div>
+
+            <div className={s.posts}>
                 <Post message='Hi' likesCount={0}/>
                 <Post message='Post' likesCount={12}/>
             </div>

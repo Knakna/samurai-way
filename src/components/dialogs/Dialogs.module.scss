@@ -1,3 +1,10 @@
 .dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
   background: purple;
+  padding: 20px;
+
+  .dialogsItems {
+    padding: 10px;
+  }
 }
