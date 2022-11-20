@@ -1,9 +1,15 @@
 import React from 'react';
 import s from './Navbar.module.scss'
 import {NavLink} from 'react-router-dom';
+import {Friends} from './friends/Friends';
+import {NameType} from '../redux/state';
 
 
-export function Navbar() {
+type NavBarType = {
+    names: NameType[]
+}
+
+export function Navbar(props: NavBarType) {
     return (
         <nav className={s.navbar}>
             <ul>
@@ -13,6 +19,7 @@ export function Navbar() {
                 <li><NavLink to='/music' activeClassName={s.active}>Music</NavLink></li>
                 <li><NavLink to='/settings' activeClassName={s.active}>Settings</NavLink></li>
             </ul>
+            <Friends names={props.names}/>
         </nav>
     );
 }

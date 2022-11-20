@@ -1,6 +1,9 @@
 .navbar {
   grid-area: n;
   background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   a {
     color: #fff;

@@ -1,3 +1,8 @@
+export type NameType = {
+    id: number
+    name: string
+}
+
 export type PostType = {
     id: number
     message: string
@@ -14,6 +19,10 @@ export type MessageType = {
     message: string
 }
 
+export type NavBar = {
+    names: NameType[]
+}
+
 export type ProfilePage = {
     posts: PostType[]
 }
@@ -26,10 +35,19 @@ export type DialogsPage = {
 export  type StateType = {
     profilePage: ProfilePage
     dialogsPage: DialogsPage
+    navBar: NavBar
 }
 
 
 const state = {
+    navBar: {
+        names: [
+            {id: 1, name: 'Olia'},
+            {id: 2, name: 'Lena'},
+            {id: 3, name: 'Max'},
+
+        ],
+    },
     profilePage: {
         posts: [
             {id: 1, message: 'Post1', likesCount: 12},

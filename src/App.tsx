@@ -20,7 +20,7 @@ function App(props: AppType) {
             <div className="app-wrapper">
 
                 <Header/>
-                <Navbar/>
+                <Navbar names={props.state.navBar.names}/>
                 <div className="app-wrapper-content">
                     <Switch>
                         {/*<Route path='/profile' component={Profile}/>*/}
