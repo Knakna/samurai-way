@@ -12,7 +12,9 @@ import {StateType} from './components/redux/state';
 
 type AppType = {
     state: StateType
+    addPost: (postMessage: string) => void
 }
+
 
 function App(props: AppType) {
     return (
@@ -25,7 +27,11 @@ function App(props: AppType) {
                     <Switch>
                         {/*<Route path='/profile' component={Profile}/>*/}
 
-                        <Route path='/profile' render={() => <Profile profilePage={props.state.profilePage}/>}/>
+                        <Route path='/profile'
+                               render={() => <Profile
+                                   state={props.state.profilePage}
+                                   addPost={props.addPost}/>}/>
+                        {/*<Route path='/profile' render={() => <Profile profilePage={props.state.profilePage} profilePage={props.addPost}/>}/>*/}
                         <Route path='/dialogs' render={() => <Dialogs dialogsPage={props.state.dialogsPage}/>}/>
                         <Route path='/news' render={() => <News/>}/>
                         <Route path='/music' render={() => <Music/>}/>

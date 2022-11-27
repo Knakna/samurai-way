@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import s from './Dialogs.module.scss'
 import {DialogItem} from './dialogItem/DialogItem';
 import {Message} from './message/Message';
@@ -18,7 +18,7 @@ export function Dialogs(props: DialogsType) {
     const messagesElements = props.dialogsPage.messages.map(m => <Message key={m.id} message={m.message}/>)
 
 
-    let addNewMessage = React.createRef<HTMLTextAreaElement>();
+    const addNewMessage = React.createRef<HTMLTextAreaElement>();
     const addMessage = () => {
         const message = addNewMessage.current?.value
         console.log(message)

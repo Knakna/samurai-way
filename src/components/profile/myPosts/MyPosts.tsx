@@ -7,6 +7,7 @@ import {log} from 'util';
 
 type MyPostsType = {
     posts: PostType[]
+    addPost: (postMessage: string) => void
 }
 type NewPostElement = {
     text: string
@@ -15,13 +16,20 @@ type NewPostElement = {
 
 export function MyPosts(props: MyPostsType) {
     const postsElements = props.posts.map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount}/>)
-    let newPostElement = React.createRef<HTMLTextAreaElement>();
+    const newPostElement = React.createRef<HTMLTextAreaElement>();
 
     const addPost = () => {
-        let text = newPostElement.current?.value
-        //проверка на наличие ссылки или if или ?
+        // const text = newPostElement.current?.value
+        /* const text = newPostElement.current?.value
+         проверка на наличие ссылки или if или ?*/
+// props.addPost(newPostElement.current? newPostElement.current.value: "  ")
+        if (newPostElement.current) {
+            props.addPost(newPostElement.current.value);
+            newPostElement.current.value = '';
 
-        console.log(text)
+        }
+        // props.addPost(newPostElement.current? newPostElement.current.value: "  ")
+        // console.log(props.addPost(newPostElement.current.value))
     }
     /*export function MyPosts({ posts }: MyPostsType) {
         const postsElements = posts.map(p =>  <Post message={p.message} likesCount={p.likesCount}/>)*/
